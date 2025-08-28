@@ -3,8 +3,8 @@ vim.env.XDG_CACHE_HOME = vim.fn.expand("~/cache")
 
 require("options")
 require("plugins")
-require("keymaps")
 require("telescope-config")
+require("keymaps")
 
 -- lualine setup
 local status, lualine = pcall(require, "lualine")

@@ -1,29 +1,48 @@
--- �����-�
+-- キーマップ設定
+
+-- Check if Telescope is available
+local telescope_ok, telescope = pcall(require, 'telescope')
+if not telescope_ok then
+  vim.notify("Telescope not found", vim.log.levels.ERROR)
+  return
+end
+
+local builtin_ok, builtin = pcall(require, 'telescope.builtin')
+if not builtin_ok then
+  vim.notify("Telescope builtin not found", vim.log.levels.ERROR)
+  return
+end
 
 -- Telescope keymaps
 vim.keymap.set('n', ';f', function()
-  require('telescope.builtin').find_files({
+  builtin.find_files({
     hidden = true,
     no_ignore = false
   })
 end)
+
 vim.keymap.set('n', ';r', function()
-  require('telescope.builtin').live_grep()
+  builtin.live_grep()
 end)
+
 vim.keymap.set('n', '\\\\', function()
-  require('telescope.builtin').buffers()
+  builtin.buffers()
 end)
+
 vim.keymap.set('n', ';t', function()
-  require('telescope.builtin').help_tags()
+  builtin.help_tags()
 end)
+
 vim.keymap.set('n', ';;', function()
-  require('telescope.builtin').resume()
+  builtin.resume()
 end)
+
 vim.keymap.set('n', ';e', function()
-  require('telescope.builtin').diagnostics()
+  builtin.diagnostics()
 end)
+
 vim.keymap.set('n', 'sf', function()
-  require('telescope').extensions.file_browser.file_browser({
+  telescope.extensions.file_browser.file_browser({
     path = vim.fn.expand('%:p:h'),
     respect_gitignore = false,
     hidden = true,
