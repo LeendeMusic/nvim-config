@@ -5,6 +5,8 @@ Personal Neovim configuration with lualine statusbar and organized Lua modules.
 ## Features
 
 - **Lualine statusbar** with solarized dark theme
+- **Telescope fuzzy finder** with file browser extension
+- **File icons** with nvim-web-devicons
 - **Organized configuration** split into separate modules
 - **Plugin management** with Packer
 - **Custom keymaps and options**
@@ -58,14 +60,25 @@ curl -fsSL https://raw.githubusercontent.com/LeendeMusic/nvim-config/main/instal
 
 ## Usage
 
-After installation, restart Neovim to see the new configuration in action. The lualine statusbar will display:
+After installation, restart Neovim to see the new configuration in action. 
 
+### Lualine Statusbar
+The statusbar displays:
 - Current mode
 - Git branch
 - File name and status
 - LSP diagnostics
 - File encoding and type
 - Cursor position and progress
+
+### Telescope Fuzzy Finder Keymaps
+- `;f` - Find files (with hidden files)
+- `;r` - Live grep (search in files)
+- `\\` - Switch between buffers
+- `;t` - Help tags
+- `;;` - Resume last telescope
+- `;e` - Show diagnostics
+- `sf` - File browser
 
 ## Customization
 
