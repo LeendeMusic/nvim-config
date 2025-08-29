@@ -5,7 +5,7 @@ Personal Neovim configuration with lualine statusbar and organized Lua modules.
 ## Features
 
 - **Lualine statusbar** with solarized dark theme
-- **Telescope fuzzy finder** with file browser extension
+- **Telescope fuzzy finder** with integrated file browser
 - **File icons** with nvim-web-devicons
 - **Organized configuration** split into separate modules
 - **Plugin management** with Packer
@@ -78,7 +78,7 @@ The statusbar displays:
 - `;t` - Help tags
 - `;;` - Resume last telescope
 - `;e` - Show diagnostics
-- `sf` - File browser
+- `sf` - File browser (replaces traditional file explorers)
 
 ## Customization
 
