@@ -9,6 +9,10 @@ vim.opt.swapfile = false -- スワップファイルを作成しない
 vim.opt.hidden = true -- バッファを切り替えるときに
                       --ファイルを保存しなくてもOKに
 
+-- Disable netrw (use telescope file browser instead)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- カーソルと表示
 -- vim.opt.cursorline = true -- カーソルがある行を強調
 -- vim.opt.cursorcolumn = true -- カーソルがある列を強調
