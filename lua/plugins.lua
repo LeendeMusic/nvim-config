@@ -55,4 +55,14 @@ return require('packer').startup(function(use)
     requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
 
+  -- Git integration
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
+
+  use 'tpope/vim-fugitive'
+
 end)

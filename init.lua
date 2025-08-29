@@ -20,7 +20,18 @@ lualine.setup {
   },
   sections = {
     lualine_a = { 'mode' },
-    lualine_b = { 'branch' },
+    lualine_b = { 
+      'branch',
+      {
+        'diff',
+        symbols = { added = ' ', modified = ' ', removed = ' ' },
+        diff_color = {
+          added = { fg = '#98be65' },
+          modified = { fg = '#da8548' },
+          removed = { fg = '#ff6c6b' }
+        }
+      }
+    },
     lualine_c = { {
       'filename',
       file_status = true, -- displays file status (readonly status, modified status)
