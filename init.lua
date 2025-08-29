@@ -24,12 +24,7 @@ lualine.setup {
       'branch',
       {
         'diff',
-        symbols = { added = ' ', modified = ' ', removed = ' ' },
-        diff_color = {
-          added = { fg = '#98be65' },
-          modified = { fg = '#da8548' },
-          removed = { fg = '#ff6c6b' }
-        }
+        symbols = { added = ' ', modified = ' ', removed = ' ' }
       }
     },
     lualine_c = { {
