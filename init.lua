@@ -10,13 +10,45 @@ require("keymaps")
 local status, lualine = pcall(require, "lualine")
 if (not status) then return end
 
+-- Custom lualine theme matching background
+local custom_theme = {
+  normal = {
+    a = { fg = '#1e1e1e', bg = '#a7c080', gui = 'bold' },
+    b = { fg = '#a7c080', bg = '#3e4452' },
+    c = { fg = '#abb2bf', bg = '#282c34' },
+  },
+  insert = {
+    a = { fg = '#1e1e1e', bg = '#61afef', gui = 'bold' },
+    b = { fg = '#61afef', bg = '#3e4452' },
+  },
+  visual = {
+    a = { fg = '#1e1e1e', bg = '#c678dd', gui = 'bold' },
+    b = { fg = '#c678dd', bg = '#3e4452' },
+  },
+  replace = {
+    a = { fg = '#1e1e1e', bg = '#e06c75', gui = 'bold' },
+    b = { fg = '#e06c75', bg = '#3e4452' },
+  },
+  command = {
+    a = { fg = '#1e1e1e', bg = '#e5c07b', gui = 'bold' },
+    b = { fg = '#e5c07b', bg = '#3e4452' },
+  },
+  inactive = {
+    a = { fg = '#5c6370', bg = '#282c34' },
+    b = { fg = '#5c6370', bg = '#282c34' },
+    c = { fg = '#5c6370', bg = '#282c34' },
+  },
+}
+
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'solarized_dark',
+    theme = custom_theme,
     section_separators = { left = '', right = '' },
-    component_separators = { left = '', right = '' },
-    disabled_filetypes = {}
+    component_separators = { left = '│', right = '│' },
+    disabled_filetypes = {},
+    always_divide_middle = true,
+    globalstatus = true,
   },
   sections = {
     lualine_a = { 'mode' },
