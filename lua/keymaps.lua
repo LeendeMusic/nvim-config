@@ -55,6 +55,10 @@ end)
 
 -- Lazygit keymap
 vim.keymap.set('n', '<leader>gg', function()
+  -- Set English language for LazyGit
+  vim.env.LANG = 'en_US.UTF-8'
+  vim.env.LC_ALL = 'en_US.UTF-8'
+  
   -- Get current file directory first
   local current_file = vim.fn.expand('%:p')
   if current_file ~= '' then
@@ -71,4 +75,4 @@ vim.keymap.set('n', '<leader>gg', function()
   else
     print('Not in a git repository')
   end
-end, { desc = 'Open LazyGit' })
+end, { desc = 'Open LazyGit in English' })
