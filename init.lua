@@ -34,7 +34,10 @@ lualine.setup {
             }
           end
         end,
-        symbols = { added = ' ', modified = ' ', removed = ' ' }
+        symbols = { added = '+', modified = '~', removed = '-' },
+        color_added = '#a7c080',
+        color_modified = '#ffdf1b', 
+        color_removed = '#ff6666'
       }
     },
     lualine_c = { {
