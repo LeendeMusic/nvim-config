@@ -80,6 +80,9 @@ The statusbar displays:
 - `;e` - Show diagnostics
 - `sf` - File browser (replaces traditional file explorers)
 
+### Git Integration Keymaps
+- `<leader>gg` - Open LazyGit (interactive git UI)
+
 ## Customization
 
 - **Statusbar**: Edit the lualine configuration in `init.lua`

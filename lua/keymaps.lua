@@ -52,3 +52,6 @@ vim.keymap.set('n', 'sf', function()
     layout_config = { height = 40 }
   })
 end)
+
+-- Lazygit keymap
+vim.keymap.set('n', '<leader>gg', '<cmd>LazyGit<cr>', { desc = 'Open LazyGit' })
