@@ -54,4 +54,14 @@ vim.keymap.set('n', 'sf', function()
 end)
 
 -- Lazygit keymap
-vim.keymap.set('n', '<leader>gg', '<cmd>LazyGit<cr>', { desc = 'Open LazyGit' })
+vim.keymap.set('n', '<leader>gg', function()
+  -- Find git root directory
+  local git_root = vim.fn.system('git rev-parse --show-toplevel 2>/dev/null'):gsub('\n', '')
+  if vim.v.shell_error == 0 then
+    -- Change to git root before opening lazygit
+    vim.cmd('cd ' .. git_root)
+    vim.cmd('LazyGit')
+  else
+    print('Not in a git repository')
+  end
+end, { desc = 'Open LazyGit' })
