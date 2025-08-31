@@ -55,11 +55,18 @@ end)
 
 -- Lazygit keymap
 vim.keymap.set('n', '<leader>gg', function()
+  -- Get current file directory first
+  local current_file = vim.fn.expand('%:p')
+  if current_file ~= '' then
+    local file_dir = vim.fn.expand('%:p:h')
+    vim.cmd('cd ' .. vim.fn.fnameescape(file_dir))
+  end
+  
   -- Find git root directory
   local git_root = vim.fn.system('git rev-parse --show-toplevel 2>/dev/null'):gsub('\n', '')
   if vim.v.shell_error == 0 then
     -- Change to git root before opening lazygit
-    vim.cmd('cd ' .. git_root)
+    vim.cmd('cd ' .. vim.fn.fnameescape(git_root))
     vim.cmd('LazyGit')
   else
     print('Not in a git repository')
